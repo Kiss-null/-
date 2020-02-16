@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>关系户注册</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            background-attachment:fixed;
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+        }
+        #table{width:900px; background:rgba(255, 255, 255, 0.9);margin:50px 800px 0px 300px;height: 800px;border-radius:40px 40px 40px 40px}
+        table{
+            margin:50px 50px 0px 50px;width:800px;text-align:center;background:rgba(255, 255, 255, 0.5);border-radius:40px 40px 40px 40px;
+        }
+        .div{padding:5px 10px;width: 150px;text-align:right;}
+        .input{margin:0;padding:0;auto:0;height:30px;width: 400px;color:blue;text-align:center;font-size:18px}
+        body{overflow-y:hidden}
+
+    </style>
+</head>
+<link type="text/css" rel="stylesheet" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-SimpleMemory.css">
+<script src="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script><!-- 这3条不能删 -->
+
+<body >
+<img src="__STATIC__/admin/img/百闻牌1.gif"style="position:fixed;right:10px;bottom:10px;z-index: 80;"/>
+<div id="table">
+    <table border="1">
+        <caption><h3>关系户创建表</h3></caption>
+        <form action="{:url('admin/index/edit')}" method="post">
+            <input name="id" type="hidden" {notempty name="$custom.id"}value="{$custom.id}"{/notempty}>
+            <tr>
+                <td ><div class="div">姓名（昵称）：</div></td>
+                <td colspan="3"><input name="name" type="text"class="input" {notempty name="$custom.name"}value="{$custom.name}"{/notempty}></td>
+            </tr>
+            <tr>
+                <td ><div class="div">关系：</div></td>
+                <td colspan="3"><input name="gx" type="text"class="input" {notempty name="$custom.gx"}value="{$custom.gx}"{/notempty}></td>
+            </tr>
+            <tr>
+                <td ><div class="div">手机号：</div></td>
+                <td colspan="3"><input type="text" name="tel" class="input"{notempty name="$custom.tel"}value="{$custom.tel}"{/notempty}</td>
+            </tr>
+            <tr>
+                <td ><div class="div"><a href="{:url('admin/login/edit')}">注册</a></div></td>
+                <td id="div"colspan="3"><input type="submit"  value="提交"></td>
+
+            </tr>
+        </form>
+    </table>
+</div>
+<script>
+    function fun(){
+        var id=$('#id').val();
+        var name=$('#name').val();
+        var gx=$('#gx').val();
+        $.ajax({
+            url:"{:url('admin/index/edit')}",
+            type:"post",
+            data:{
+                id:id,
+                name:name,
+                gx:gx},
+            success:function(e){
+                if(e==1){
+                    alert("添加成功");
+                    window.location.href="{:url('admin/index/index')}";
+                }else{
+                    alert("添加失败");
+                    window.location.href="{:url('admin/index/index')}";
+                }
+            }
+        })
+    }
+</script>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/flat-ui.css"><!-- 公平字大小 -->
+<script type="text/javascript" src="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/background-change.js"></script>
+<script type="text/javascript">
+    /* 鼠标特效 */
+    var a_idx = 0;
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法治❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤");
+            var $i = $("<span></span>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+                y = e.pageY;
+            $i.css({
+                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+            });
+            $("body").append($i);
+            $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                1500,
+                function() {
+                    $i.remove();
+                });
+        });
+    });
+</script>
+</body>
+</html>

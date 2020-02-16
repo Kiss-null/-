@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>用户登录</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            background-attachment:fixed;
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+        }
+        #table{
+            margin:200px 200px 0px 600px;height:100px;width:300px;text-align:center;background:rgba(255, 255, 255, 0.5);border-radius:40px 40px 40px 40px;
+        }
+
+        #div input{color:blue;text-align:center;font-size:18px}
+        .div{padding:5px 20px;width: 60px;}
+        body{overflow-y:hidden}
+
+    </style>
+</head>
+<link type="text/css" rel="stylesheet" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-SimpleMemory.css">
+<script src="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script><!-- 这3条不能删 -->
+
+<body >
+<img src="__STATIC__/admin/img/百闻牌1.gif"style="position:fixed;right:10px;bottom:10px;z-index: 80;"/>
+<table border="0"id="table">
+    <form action="{:url('admin/login/index')}" method="post">
+        <tr>
+            <td ><div class="div">账号：</div></td>
+            <td><input type="text" name="name"value=""></td>
+        </tr>
+        <tr>
+            <td ><div class="div">密码：</div></td>
+            <td><input type="password" name="password"value=""></td>
+        </tr>
+        <tr>
+            <td ><div class="div">验证码：</div></td>
+            <td><input type="text" name="verifyCode" class="pass-text-input " placeholder="请输入验证码"><div>{:captcha_img()}</div></td>
+        </tr>
+        <tr>
+            <td ><div class="div"><a href="{:url('admin/login/edit')}">注册</a></div></td>
+            <td id="div"colspan="2"><input type="submit" value="登录"></td>
+        </tr>
+    </form>
+</table>
+<link rel="stylesheet" type="text/css" href="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/flat-ui.css"><!-- 公平字大小 -->
+<script type="text/javascript" src="__STATIC__/admin/Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/background-change.js"></script>
+<script type="text/javascript">
+    /* 鼠标特效 */
+    var a_idx = 0;
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法治❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤");
+            var $i = $("<span></span>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+                y = e.pageY;
+            $i.css({
+                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+            });
+            $("body").append($i);
+            $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                1500,
+                function() {
+                    $i.remove();
+                });
+        });
+    });
+</script>
+</body>
+</html>

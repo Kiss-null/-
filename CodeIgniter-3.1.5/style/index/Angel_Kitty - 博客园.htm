@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+    <title>Angel_Kitty - 博客园</title>
+
+
+    <link type="text/css" rel="stylesheet" href="Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+	<link id="MainCss" type="text/css" rel="stylesheet" href="Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-SimpleMemory.css">
+	<script src="Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script><!-- 这3条不能删 -->
+	  <script type="text/javascript"> 
+	/* 鼠标特效 */ 
+	var a_idx = 0; 
+	jQuery(document).ready(function($) { 
+		$("body").click(function(e) { 
+			var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法治❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤"); 
+			var $i = $("<span></span>").text(a[a_idx]); 
+			a_idx = (a_idx + 1) % a.length; 
+			var x = e.pageX, 
+			y = e.pageY; 
+			$i.css({ 
+				"z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
+				"top": y - 20, 
+				"left": x, 
+				"position": "absolute", 
+				"font-weight": "bold", 
+				"color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")" 
+			}); 
+			$("body").append($i); 
+			$i.animate({ 
+				"top": y - 180, 
+				"opacity": 0 
+			}, 
+			1500, 
+			function() { 
+				$i.remove(); 
+			}); 
+		}); 
+	}); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/flat-ui.css"><!-- 公平字大小 -->
+	<script type="text/javascript" src="Angel_Kitty%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/background-change.js"></script>
+
+
+<body style="background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(&quot;https://i.loli.net/2018/05/03/5aeb1105d3f68.jpg&quot;); background-size: cover; background-origin: padding-box; background-clip: border-box;">
+
+
+
+
+</body></html>
